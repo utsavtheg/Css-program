@@ -197,17 +197,171 @@ same size arr
 // });
 // console.log(min);
 
-function getMin(nums){
-  let min = nums.reduce((min,el) => {
-  if(min < el){
-    return min;
-  }else {
-    return el;
-  }
+// function getMin(nums){
+//   let min = nums.reduce((min,el) => {
+//   if(min < el){
+//     return min;
+//   }else {
+//     return el;
+//   }
 
-},nums[0]);
-    return min;
-} 
+// },nums[0]);
+//     return min;
+// } 
 
-let nums = [10,20,30,40,5];
-console.log(getMin(nums));
+// let nums = [10,20,30,40,5];
+// console.log(getMin(nums));
+
+
+//default Parameters
+// giving a default value to the arguments
+
+// function func(a,b = 2){
+//   //do something
+// }
+
+// function sum(a, b = 3){
+//   return a + b;
+// }
+
+
+//spread 
+// expands an iterable into multiple values
+
+
+// function func(...arr){
+//   //do something
+// }
+
+// let arr = [1,2,3,4,5];
+// Math.min(...arr);
+// console.log(...arr);
+
+
+//spread as a literals
+
+// let arr = [1,2,3,4,5];
+// let newArr = [...arr];
+// console.log(newArr);
+
+// let chars = [..."hello"];
+// console.log(chars);
+
+// let odd = [1,3,5,7,9];
+// let even = [2,4,6,8,10];
+// let nums = [...odd,...even];
+// console.log(nums);
+
+
+// as object literals
+
+// let data = {
+//   email:"ironman301@gmail.com",
+//   password:"abcd",
+  
+// };
+
+
+// let dataCopy = {...data,id:123,
+//   country:"India",};
+
+
+// let arr = [1,2,3,4,5];
+// let obj1 = {...arr};
+// let char = ("hello");
+// let obj2 = {...char};
+
+
+//rest
+
+//Allows a function to take an indefinite number of arguments and bundle them in an array
+// function sum(...args){
+//   // return args.reduce((add, el) => add + el);
+//   for(let i=0;i<args.length;i++){
+//     console.log("you gave us: ", args[i]);
+//   }
+// }
+
+
+// function min(){
+//   console.log(arguments);
+//  console.log(arguments.length);
+//  arguments.push(1);
+// }
+
+
+// function test(a, ...b){
+//   console.log(a);
+//   console.log(b);
+// }
+
+// test(5,10,15,20);
+
+// take multiple input as a array
+
+// function test(...a){
+//   console.log(a);
+// }
+// test(10);
+
+
+// function sum(...args){
+//   return args.reduce((sum, el) => sum+el);
+// }
+
+
+// function min(msg,...args){
+//   console.log(msg);
+//   return args.reduce((min,el) => {
+//     if(min > el){
+//       return el;
+
+//     } else{
+//       return min;
+//     }
+//   });
+// }
+
+// show error
+// function min(...args,msg){
+//   console.log(msg);
+//   return args.reduce((min,el) => {
+//     if(min > el){
+//       return el;
+
+//     } else{
+//       return min;
+//     }
+//   });
+// }
+
+
+//Destructuring
+// Strong values of array into multiple variables
+
+
+// let names = ["tony","bruce","steve","peter"];
+// let[winner, runnerup,secondRunnerUp] = names;
+// console.log(winner, runnerup,...secondRunnerUp);
+
+
+
+// in object
+
+// const student = {
+//   name: "karan",
+//   class:9,
+//   age:14,
+//   subjects:["hindi","english","math","science","social studies"],
+//   userName : "karan123",
+//   password:1234,
+// }
+
+// const{userName: user, password: pass,subjects : subjects1,city ="Mumbai"} = student;
+// console.log(student);
+
+
+
+// DOM(Document object Model)
+// The dom represent a document with a logical Tree.
+// it allows us to manipulate/change webpage Content(HTML elements).
