@@ -1,4 +1,19 @@
-body {
+.red{
+  color: red;
+}
+.blue{
+  color: blue;
+}
+.box{
+  border: 1px solid black;
+  background-color: pink;
+}
+
+
+
+
+
+/* body {
   font-family: Arial;
 }
 
@@ -25,4 +40,4 @@ body {
 
 #description {
   background-color: antiquewhite;
-}
+} */
