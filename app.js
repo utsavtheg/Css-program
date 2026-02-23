@@ -583,3 +583,187 @@ same size arr
 // document.querySelector("div").prepend(para2);
 
 // div.classList.add("box");
+
+
+// Dom Events
+
+// Events are signals that something has occurred.(user inputs /actions)
+
+//inline events
+// eg . in button tag
+/* <button onclick="console.log('button was clicked);console.log('apna college')">click me</button> */
+
+// onclick(when an Element is clicked)
+// onmouseenter(when mouse enters an element)
+
+
+// let btns = document.querySelectorAll("button");
+// console.dir(btn);
+
+// btn.onclick = function(){
+//    alert("button was clicked");
+//}
+
+// function sayHello(){
+//     alert("Hello!");
+
+// }
+
+// btn.onclick = sayHello;
+
+// for(btn of btns){
+//  btn.onclick = sayHello;
+//  btn.onmouseenter = function (){
+//     console.log("you entered a button");
+//  }
+// }
+
+// function sayHello(){
+//     alert("Hello!");
+
+// }
+
+
+
+//Event  Listener
+// addEventListener
+
+// Element.addEventListener(event, callback);
+
+// btns.addEventListener("click", function(){
+//     console.log("button clicked");
+// });
+
+// let btns = document.querySelectorAll("button");
+
+
+// for(btn of btns){
+//  btn.onclick = sayHello;
+//  btn.onclick = sayName;
+// }
+
+// function sayHello(){
+//     alert("Hello!");
+
+// }
+// function sayName(){
+//     alert("Apna college");
+
+// }
+
+//above problem solve by eventlistener in above problem function not listening about both function
+
+// let btns = document.querySelectorAll("button");
+
+
+// for(btn of btns){
+// btn.addEventListener("click",sayHello);
+// btn.addEventListener("click", sayName);
+// }
+
+// function sayHello(){
+//     alert("Hello!");
+
+// }
+// function sayName(){
+//     alert("Apna college");
+
+// }
+
+// let p = document.querySelector('p');
+// p.addEventListener("click", function(){
+//     console.log("parah was clicked");
+
+
+// });
+// let box = document.querySelector(".box");
+// box.addEventListener("mouseenter" , function(){
+//     console.log("mouse inside div");
+// });
+
+
+
+
+// This in event Listeners
+
+// when 'this' is used in a callback of event handler of something, it refers to that something
+
+
+// let btn = document.querySelector('button');
+// let p = document.querySelector('p');
+// let h1 = document.querySelector('h1');
+// let h3 = document.querySelector('h3');
+// // btn.addEventListener("click" , function(){
+// //     console.dir(this.innerText);
+// //     this.style.backgroundColor = 'beige';
+// // });
+// // p.addEventListener("click" , function(){
+// //     console.dir(this.innerText);
+// //     this.style.backgroundColor = 'beige';
+// // });
+// // h1.addEventListener("click" , function(){
+// //     console.dir(this.innerText);
+// //     this.style.backgroundColor = 'beige';
+// // });
+// // h3.addEventListener("click" , function(){
+// //     console.dir(this.innerText);
+// //     this.style.backgroundColor = 'beige';
+// // });
+
+
+// //remove redundancy
+
+// function changeColor(){
+//     console.dir(this.innerText);
+//     this.style.backgroundColor = 'beige'
+// }
+// btn.addEventListener("click",changeColor);
+// p.addEventListener("click",changeColor);
+// h1.addEventListener("click",changeColor);
+// h3.addEventListener("click",changeColor);
+
+
+
+
+//Keyboard Events
+
+// let inp = document.querySelector("input");
+
+// inp.addEventListener("keydown" ,function(event){
+//     console.log("key = ", event.key);
+//     console.log("code = ",event.code);
+//     console.log('key was pressed');
+// });
+
+
+// inp.addEventListener("keyup" ,function(){
+//     console.log('key was up');
+// });
+
+
+
+//form Events
+
+// let form = document.querySelector("form");
+// form.addEventListener("submit", function(event){
+//     event.preventDefault();
+//     alert("submitted");
+// })
+
+
+//Extracting form Data
+
+
+//  let form = document.querySelector("form");
+// form.addEventListener("submit", function(event){
+//     event.preventDefault();
+    
+
+//     let user = document.querySelector("#username");
+//     let pass = document.querySelector("#password");
+//     console.log(user.value);
+//     console.log(pass.value);
+
+//     alert(`Hii ${user.value} and your password is ${pass.value}` );
+// });
+
