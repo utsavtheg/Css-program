@@ -1,0 +1,16 @@
+//Terminal
+//A text input and output environment.
+// that helps in
+// . nodejs,git , programming
+// .speed
+// .access
+
+
+//Different terms
+//command line -> any interface that is used by entering textual commands(gen.Windows centric);
+//Terminal->this is a type of command line(gen. Mac centric)
+// console -> A command-line interface used to work with your computer
+
+//shell -> a program running on terminal
+//bash -> a popular shell on Mac OS/Linux
+//Z-shell -> Another shell(default)

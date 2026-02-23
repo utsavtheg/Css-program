@@ -767,3 +767,62 @@ same size arr
 //     alert(`Hii ${user.value} and your password is ${pass.value}` );
 // });
 
+
+//More Events
+//change event
+// The change event occurs when the value of an element has been changed (only works on<input>,<textarea>and <select> elements)
+
+
+//input event
+//the input event fires when the value of an <input>,<select>,or<textarea>elements has been changed
+
+
+//  let form = document.querySelector("form");
+// form.addEventListener("submit", function(event){
+//     event.preventDefault();
+    
+// });
+
+// let user = document.querySelector("#username");
+//     user.addEventListener("change",function(){
+//     console.log("change event");
+//     console.log("final value =" ,this.value);
+//    });
+
+//    user.addEventListener("input",function(){
+//     console.log("input event");
+//     console.log("final value = ",this.value);
+//    });
+
+
+
+// let inp = document.querySelector("#text");
+// let p = document.querySelector("p");
+
+// inp.addEventListener("input",function(){
+//     console.log(inp.value);
+//     p.innerText = inp.value;
+// });
+
+
+//Event bubbling
+
+
+let div = document.querySelector("div");
+let ul = document.querySelector("ul");
+let lis = document.querySelectorAll("li");
+
+div.addEventListener("click",function(){
+    console.log("div was clicked");
+});
+ul.addEventListener("click",function(){
+    event.stopPropagation();
+    console.log("ul was clicked");
+});
+
+for(li of lis){
+    li.addEventListener("click" , function(){
+        event.stopPropagation();
+        console.log("li was clicked");
+    });
+}
