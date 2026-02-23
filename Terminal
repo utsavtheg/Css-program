@@ -1,4 +1,4 @@
-//Terminal
+Terminal
 //A text input and output environment.
 // that helps in
 // . nodejs,git , programming
@@ -6,7 +6,7 @@
 // .access
 
 
-//Different terms
+// Different terms
 //command line -> any interface that is used by entering textual commands(gen.Windows centric);
 //Terminal->this is a type of command line(gen. Mac centric)
 // console -> A command-line interface used to work with your computer
@@ -14,3 +14,72 @@
 //shell -> a program running on terminal
 //bash -> a popular shell on Mac OS/Linux
 //Z-shell -> Another shell(default)
+
+
+// Basic commands
+// ls => list Files show my Files
+// pwd => print working directory (where am i?)
+
+// clear => clear screen
+
+// upward and downward arrow for old and new command
+
+
+Navigation
+// Inside & Outside Directories
+
+// cd = change directory
+
+// cd desktop
+// cd.. = back button
+
+
+Paths 
+// Absolute & Relative 
+
+// cd Desktop/devicePixelRatio(relative path) here relative is a current location
+// cd/Users/Utsav Gupta/Desktop(absolute path)
+
+// /= root directory
+
+// ~= home directory
+
+
+
+// MAking Directories
+
+// mkdir = make directory
+
+
+//Flags
+
+// flags are characters that we pass with commands to modify their behavior
+
+
+// manual command
+
+// man Is -> give info about Is command
+// man mkdir -> give info about mkdir command
+
+// with flags
+// Is -I
+// Is -a 
+// Is -Ia 
+
+
+//Touch Command
+// Used to create files 
+// touch index.html 
+// touch App.js 
+// touch abc.txt 
+
+
+//Deleting files & folders
+
+// rm - removes Files 
+
+// rmdir-removes empty folders
+
+// rm -rf - removes any folders
+
+
