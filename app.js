@@ -1315,23 +1315,23 @@ same size arr
 
 
 //with help of async and await
-let url = "https://dummy-json.mock.beeceptor.com/posts";
+// let url = "https://dummy-json.mock.beeceptor.com/posts";
 
-async function getFacts(){
-    try{
+// async function getFacts(){
+//     try{
       
-    let res = await fetch(url);
-    let data = await res.json();
+//     let res = await fetch(url);
+//     let data = await res.json();
 
-    console.log(data.facts);
+//     console.log(data.facts);
 
-    let res2 = await fetch(url);
-    let data2 = await res2.json();
+//     let res2 = await fetch(url);
+//     let data2 = await res2.json();
 
-    console.log(data2.facts);
+//     console.log(data2.facts);
 
-    }catch (e) {
-        console.log("error -", e);
-    }
-    console.log("bye");
-}
+//     }catch (e) {
+//         console.log("error -", e);
+//     }
+//     console.log("bye");
+// }
