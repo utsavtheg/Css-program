@@ -828,30 +828,510 @@ same size arr
 // }
 
 
-let btn = document.querySelector("button");
-let ul = document.querySelector("ul");
-let inp = document.querySelector("input");
+// let btn = document.querySelector("button");
+// let ul = document.querySelector("ul");
+// let inp = document.querySelector("input");
 
-btn.addEventListener("click" , function(){
-    let item = document.createElement("li");
-    item.innerText = inp.value;
+// btn.addEventListener("click" , function(){
+//     let item = document.createElement("li");
+//     item.innerText = inp.value;
 
 
-    let delBtn = document.createElement("button");
-    delBtn.innerText = "Delete";
-    delBtn.classList.add("Delete");
+//     let delBtn = document.createElement("button");
+//     delBtn.innerText = "Delete";
+//     delBtn.classList.add("Delete");
 
-    item.appendChild(delBtn);
-    ul.appendChild(item);
-    inp.value = "" ;
+//     item.appendChild(delBtn);
+//     ul.appendChild(item);
+//     inp.value = "" ;
 
    
-});
- let delBtns = document.querySelectorAll(".Delete");
-    for(delBtn of delBtns){
-        delBtns.addEventListener("click", function (){
-            let par = this.parentElement;
-            console.log(par);
-            par.remove();
-        });
+// });
+//  let delBtns = document.querySelectorAll(".Delete");
+//     for(delBtn of delBtns){
+//         delBtns.addEventListener("click", function (){
+//             let par = this.parentElement;
+//             console.log(par);
+//             par.remove();
+//         });
+//     }
+
+
+
+
+
+
+
+
+
+
+
+//Js call Stack
+
+// call Stack 
+//eg. of call function
+
+// function hello(){
+//     console.log("hello");
+
+// }
+// hello();
+
+//stack is a data structure is arrange like stairs of book first in last out or last in first out
+//  lifo or filo
+
+// now learn the meaning of call stack
+
+// eg.
+// function hello(){
+//     console.log("inside hello fxn");
+//     console.log("hello");
+// }
+
+// function demo(){
+//     console.log("calling hello fxn");
+//     hello();
+// }
+
+// console.log("calling demo fxn");
+// demo();
+//Visualizing the call stack
+
+// function one(){
+//     return 1;
+// }
+// function two(){
+//     return one()+one();
+// }
+
+// function three(){
+//     let ans = two()+one();
+//     console.log(ans);
+// }
+// three();
+
+
+//BreakPoints
+
+// in sources
+
+
+//Js is Single Threaded 
+
+
+// setTimeout(function (){
+//     console.log("apna college");
+// },2000);
+
+// console.log("hello ...");
+
+
+//js is not wait setTimeout and callstack work by the help of browser return in c++ work like a synchronous mode
+// let a = 25;
+// console.log(a);
+// let b= 10;
+// console.log(b);
+// console.log(a+b);
+
+
+
+//eg.
+// h1 = document.querySelector("h1");
+
+
+// function changeColor(color,delay,nextColorChange){
+//     setTimeout(() => {
+//         h1.style.color = color;
+//        if(nextColorChange) nextColorChange();
+//  },delay);
+    
+// }
+
+//     changeColor("red", 1000, () =>{
+//        changeColor("orange",1000,()=>{
+//         changeColor("yellow",1000, ()=>{
+//          changeColor("green", 1000,() =>{
+//             changeColor("purple", 1000);
+//          });
+//         });
+//        });
+//     });
+
+
+    //callbacks nesting it looks like => callback hell; to stop this uses promises keywords are async and await
+
+
+ //Promises
+ //The promises object represents the eventual completion (or failure ) of an asynchronous operation and its resulting value
+    
+
+//  function savetoDb(data, success, failure){
+//     let internetSpeed = Math.floor(Math.random()*10)+1;
+//     if(internetSpeed > 4){
+//         success();
+
+//     }else{
+//        failure();
+//     }
+//  }
+
+//  savetoDb(
+//     "apna college",
+//     () => {
+//         console.log("success : your data was saved  " );
+//         savetoDb(
+//             "hello world",
+//             () => {
+//                 console.log("success2: data2 saved");
+//                 savetoDb(
+//                     "utsav",
+//                     () => {
+//                         console.log("success3: data3 saved");
+//                     },
+//                     () => {
+//                         console.log("failure3 : weak connection");
+//                     }
+//                 );
+//             },
+//             () => {
+//                 console.log("failure2 : weak connection");
+//             }
+//         );
+//     },
+//     () => {
+//         console.log(" failure: weak connection. data not saved");
+//     }
+//  );
+
+    
+//resolve & reject
+
+// resolve is success & reject is failure
+
+// function savetoDb(data){
+//     return new Promise((resolve, reject) => {
+//      let internetSpeed = Math.floor(Math.random()*10)+1;
+//      if(internetSpeed > 4){
+//      resolve("Success: data was saved");
+//      }else{
+//     reject("failure: weak connection");
+//      }
+//     });
+
+// }
+
+// savetoDb("apna college");
+//state -> pending , reject(error) ,fulfilled(resolved);
+
+//Promises
+// then() & catch()
+
+
+
+//eg.
+// let request = saveToDBPromise("apnacollege");
+// request
+//   .then(() => {
+//     console.log("promise resolved");
+//   })
+//   .catch(() => {
+//     console.log("promise reject");
+//   });
+
+
+// let request = savetoDb("apna college");
+// request.then(() =>{
+//     console.log("promise resolved");
+//     console.log(request);
+
+// })
+// .catch(() =>{
+//     console.log("promise rejected");
+//     console.log(request);
+// });
+
+// savetoDb("apna college")
+// .then(() => {
+//    console.log("promise resolved");
+// })
+// .catch(() =>{ 
+//     console.log("promise rejected ");
+// })
+    
+
+//pRomise chaining
+//Improved version
+
+// savetoDb("apna college")
+// .then(() => {
+//    console.log("data1 saved");
+//    return savetoDb("helloworld")
+   
+// })
+// .then(()=>{
+//     console.log("data2 saved");
+//     return savetoDb("shradha");
+//    })
+//     .then(()=>{
+//     console.log("data3 saved");
+//    })
+// .catch(() =>{ 
+//     console.log("promise rejected ");
+// });
+// promises are rejected and resolved with some data(valid results 0r errors)
+
+
+// savetoDb("apna college")
+// .then((result) => {
+//    console.log("data1 saved");
+//    console.log("result of promise:",result);
+//    return savetoDb("helloworld")
+   
+// })
+// .then((result)=>{
+//     console.log("data2 saved");
+//     console.log("result of promise",result);
+//     return savetoDb("shradha");
+//    })
+//     .then((result)=>{
+//     console.log("data3 saved");
+//     console.log("result of promise",result);
+//    })
+// .catch(() =>{ 
+//     console.log("promise rejected ");
+//     console.log(error);
+// });
+    
+
+// now resolve our code
+// h1 = document.querySelector("h1");
+
+
+// function changeColor(color,delay,){
+//    return new Promise((resolve,reject) =>{
+//         setTimeout(() => {
+//         h1.style.color = color;
+//        resolve("color changed!") ;
+//   },delay);
+    
+
+//     });
+    
+// }
+
+// changeColor("red", 1000)
+// .then(() => {
+//     console.log("red color was completed");
+//     return changeColor("orange" , 1000);
+// }) 
+// .then (() =>{
+//     console.log("orange color was completed");
+//     return changeColor("yellow", 1000);
+
+// })
+// .then(() =>{
+//     console.log("yellow color is completed");
+//     return changeColor("purple", 1000);
+
+// })
+// .then(() =>{
+//     console.log("purple was completed");
+// });
+
+    
+
+
+//async functions
+// creates async functions returns promises
+
+
+// async function greet(){
+//     throw "weak connection";
+//     return hello;
+
+// }
+// greet()
+// .then((result) =>{
+//     console.log("promise was resolved");
+//     console.log("result was: ", result);
+// })
+// .catch((err) =>{
+//     console.log("promise was rejected with err :", err);
+// });
+
+// let demo = async() =>{
+//     return 5;
+// };
+
+//await keyword
+// pauses the execution of its surrounding async function until the promise is settled (resolved or rejected) always use with async fxn
+
+//eg.
+// function getNum(){
+//     return new Promise((resolve,reject) => {
+//         setTimeout(()=>{
+//         let num = Math.floor(Math.random() * 10)+1;
+//         console.log(num);
+//         resolve();
+//         },1000);
+        
+//     });
+// }
+// async function demo(){
+//     await getNum();
+//     await getNum();
+//     await getNum();
+//     await getNum();
+//     getNum();
+// }
+
+
+//apply in our code
+// h1 = document.querySelector("h1");
+
+
+// function changeColor(color,delay,){
+//    return new Promise((resolve,reject) =>{
+//         setTimeout(() => {
+//         h1.style.color = color;
+//         console.log(`color changed to ${color}!`);
+//        resolve("color changed!") ;
+//   },delay);
+    
+
+//     });
+    
+// }
+
+// async function demo(){
+//     await changeColor("red",1000);
+//     await changeColor("yellow",1000);
+//     await changeColor("green",1000);
+//      changeColor("purple",1000);
+    
+
+
+// }
+
+
+//Handing rejections with await
+// h1 = document.querySelector("h1");
+
+
+// function changeColor(color,delay,){
+//    return new Promise((resolve,reject) =>{
+//         setTimeout(() => {
+//         let num = Math.floor(Math.random() * 5)+1;
+//         if(num > 3){
+//             reject("promise rejected");
+//         }
+//         h1.style.color = color;
+//         console.log(`color changed to ${color}!`);
+//        resolve("color changed!") ;
+//   },delay);
+    
+
+//     });
+    
+// }
+
+// async function demo(){
+//     try{
+//     await changeColor("red",1000);
+//     await changeColor("yellow",1000);
+//     await changeColor("green",1000);
+//     await changeColor("purple",1000);
+//     } catch(err){
+//         console.log("error caught");
+//         console.log(err);
+//     }
+//     let a =5;
+//     console.log(a);
+//     console.log("new number = ", a+3);
+    
+
+
+// }
+
+//APi is when we search on browser sending a request to amazon server and server give response a page
+
+// Application Programming Interface work as waiter in a restaurant in json format
+
+//some random APIs normal without key and keyPassword they are free
+
+
+//JSON JAVASCRIPT Object Notation earlier in XML format for more knowledge visit www.Json.org
+//Accessing Data from Json
+// .Json.parse(data)Method To parse a string data into a JS object
+//.JSON.stringify(json)Method to parse a JS object data into JSON
+
+//Testing API requests
+//tools
+// .Hoppscoth
+// .postMan
+
+//AJAX Asynchronous JS and XML
+
+//https: Verbs are get,post,delete
+
+//status code 
+// .200 means ok
+//. 404 - Not found
+//.400 - Bad request
+//.500- Internal server error
+
+
+//Add Information in APIs URL
+//Query Strings
+//https://www.google.com/search?q=harry+porter
+//here q is a key and value is harry
+//?name=shradha&marks=95
+//https headers -> header, value are request & response
+
+//our first request using fetch(url);
+
+// let url =" https://fake-json-api.mock.beeceptor.com/users";
+
+// fetch(url)
+// .then((response) => {
+//     console.log(response);
+//     return response.json();
+    
+// })
+// .then((data) => {
+//         console.log("data1 =",data.fact);
+//         return fetch(url);
+//     })
+//     .then((response) => {
+//         return response.json();
+//     })
+//     .then((data2) => {
+//         console.log("data2 =",data2.fact);
+//     })
+// .catch((err) => {
+//     console.log("Error -", err);
+// });
+// console.log("I am happy");
+
+
+//with help of async and await
+let url = "https://dummy-json.mock.beeceptor.com/posts";
+
+async function getFacts(){
+    try{
+      
+    let res = await fetch(url);
+    let data = await res.json();
+
+    console.log(data.facts);
+
+    let res2 = await fetch(url);
+    let data2 = await res2.json();
+
+    console.log(data2.facts);
+
+    }catch (e) {
+        console.log("error -", e);
     }
+    console.log("bye");
+}
