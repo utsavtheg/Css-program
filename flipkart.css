@@ -1,0 +1,29 @@
+*{
+  padding: 0%;
+  margin: 0%;
+}
+.nav{
+  background-color: #f9f9f9;
+  height: 80px;
+  width:100%;
+  display: flex;
+  position: fixed;
+ 
+
+}
+.plane{
+  display: flex;
+  align-items: center;
+  align-self: flex-start;
+  padding-top: 30px;
+  padding-left:20px ;
+}
+
+.location{
+  margin-left: 300px;
+  display: inline-flex;
+  align-items: center;
+}
+.delivery{
+  text-decoration: none;
+}
